@@ -44,7 +44,10 @@ public class WordManager {
         System.out.println("WordManager!!!");
         while(true) {
             int menu = selectMenu();
-            if(menu==0) break;
+            if(menu==0) {
+                System.out.print("장비를 정지합니다");
+                break;
+            }
             if(menu==4) {
                 wordCRUD.addWord();
                 //create
