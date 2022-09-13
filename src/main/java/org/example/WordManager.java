@@ -55,14 +55,14 @@ public class WordManager {
             }else if(menu==3) {
 
             }else if(menu==4) {
-                wordCRUD.addWord();
                 //create
+                wordCRUD.addItem();
             }else if(menu==5){
                 //update
                 wordCRUD.updateItem();
             }else if(menu==6){
                 //delete
-
+                wordCRUD.deleteItem();
             }else if(menu==7){
 
             }else{
