@@ -48,11 +48,25 @@ public class WordManager {
                 System.out.print("장비를 정지합니다");
                 break;
             }
-            if(menu==4) {
+            if(menu==1) {
+                wordCRUD.listAll();
+            }else if(menu==2){
+
+            }else if(menu==3) {
+
+            }else if(menu==4) {
                 wordCRUD.addWord();
                 //create
-            }else if(menu==1) {
-                wordCRUD.listAll();
+            }else if(menu==5){
+                //update
+                wordCRUD.updateItem();
+            }else if(menu==6){
+                //delete
+
+            }else if(menu==7){
+
+            }else{
+                System.out.println("다시 입력하세요.");
             }
         }
     }
