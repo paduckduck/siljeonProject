@@ -1,11 +1,14 @@
 package org.example;
 
+import javax.management.remote.rmi._RMIConnection_Stub;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WordCRUD implements ICRUD{
     ArrayList<Word> list;
     Scanner s;
+    final String fileName = "Dictionary.txt";
     /*
      * => 난이도(1,2,3)& 새 단어 입력:1 driveway
      * 뜻 입력: 차고 진입로
@@ -103,6 +106,48 @@ public class WordCRUD implements ICRUD{
             System.out.println("단어가 삭제되었습니다.");
         }else{
             System.out.println("취소되었습니다. ");
+        }
+    }
+    public void loadFile(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            String line;
+            int count=0;
+            while(true) {
+                line = br.readLine();
+                //System.out.println(line+count);
+                if (line == null) {
+                    System.out.print("break");
+                    break;
+                }else {
+                    String data[] = line.split("\\|");
+                    int level = Integer.parseInt(data[0]);
+                    //System.out.println(level);
+                    String word = data[1];
+                    //System.out.println(data[1]);
+                    String meaning = data[2];
+                    //System.out.println(meaning);
+                    list.add(new Word(0, level, word, meaning));
+                    count++;
+                }
+            }
+            br.close();
+            System.out.println("==> "+count+ "개 단어 로딩 완료!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveFile() {
+        try {
+            PrintWriter pr = new PrintWriter(new FileWriter("test.txt"));
+            for(Word one : list){
+                pr.write(one.toFileString()+ "\n");
+            }
+            pr.close();
+            System.out.println("===> 데이터 저장 완료!");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

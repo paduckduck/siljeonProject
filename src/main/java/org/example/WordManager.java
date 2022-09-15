@@ -42,14 +42,17 @@ public class WordManager {
     }
     public void start() {
         System.out.println("WordManager!!!");
+        wordCRUD.loadFile();
         while(true) {
             int menu = selectMenu();
             if(menu==0) {
                 System.out.print("장비를 정지합니다");
                 break;
+                //ㅇㅋㅇㅋ
             }
             if(menu==1) {
                 wordCRUD.listAll();
+                //ㅇㅋㅇㅋ
             }else if(menu==2){
 
             }else if(menu==3) {
@@ -57,14 +60,17 @@ public class WordManager {
             }else if(menu==4) {
                 //create
                 wordCRUD.addItem();
+                //ㅇㅋㅇㅋ
             }else if(menu==5){
                 //update
                 wordCRUD.updateItem();
+                //ㅇㅋㅇㅋ
             }else if(menu==6){
                 //delete
                 wordCRUD.deleteItem();
+                //ㅇㅋㅇㅋ
             }else if(menu==7){
-
+                wordCRUD.saveFile();
             }else{
                 System.out.println("다시 입력하세요.");
             }
