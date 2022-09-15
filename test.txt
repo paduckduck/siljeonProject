@@ -1,0 +1,10 @@
+1|apple|사과
+1|duck|오리
+1|java|자바
+2|solana|솔라나
+2|bitcoin|비트코인
+2|ethereum|이더리움
+3|samsung|삼성
+3|microsoft|마이크로소프트
+3|facebook|페이스북
+1| apple|사과
