@@ -54,9 +54,9 @@ public class WordManager {
                 wordCRUD.listAll();
                 //ㅇㅋㅇㅋ
             }else if(menu==2){
-
+                wordCRUD.searchLevel();
             }else if(menu==3) {
-
+                wordCRUD.searchWord();
             }else if(menu==4) {
                 //create
                 wordCRUD.addItem();
